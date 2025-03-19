@@ -16,8 +16,8 @@ public class MainActivity extends AppCompatActivity {
     private String input = "";
     private TextView resulText;
 
-    private double firstVal;
-    private double secondVal;
+    private int firstVal;
+    private int secondVal;
     private char currentOperation;
 
     @Override
@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.calculator_main);
         resulText = findViewById(R.id.result);
         setNumberBtnListeners();
-
+        setOperatorBtnListeners();
     }
 
     private void setNumberBtnListeners()
@@ -67,18 +67,11 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if(!input.isEmpty())
                 {
-                    firstVal = Double.parseDouble(input);
+                    firstVal = Integer.parseInt(input);
                 }
                 else
                 {
-                    secondVal = Double.parseDouble(input);
-                    switch (currentOperation){
-                        case '+': firstVal += secondVal; break;
-                        case '-': firstVal -= secondVal; break;
-                        case '*': firstVal *= secondVal; break;
-                        case '/': firstVal = (secondVal != 0) ? firstVal / secondVal : 0;
-                    }
-                    input = "";
+                    computeResult();
                 }
 
                 currentOperation = ((Button) v).getText().toString().charAt(0);
@@ -90,7 +83,38 @@ public class MainActivity extends AppCompatActivity {
             findViewById(id).setOnClickListener(operationClickListener);
         }
 
-        
+        findViewById(R.id.btnEqual).setOnClickListener(view -> {
+            computeResult();
+            resulText.setText(String.valueOf(firstVal));
+        });
+
+        findViewById(R.id.btnClear).setOnClickListener(view -> {
+            firstVal = 0;
+            secondVal = 0;
+            input = "";
+            resulText.setText("0");
+        });
+
+        findViewById(R.id.btnBack).setOnClickListener(view -> {
+            if (!input.isEmpty()) {
+                input = input.substring(0, input.length() - 1);
+                resulText.setText(input.isEmpty() ? "0" : input);
+            }
+        });
+
+    }
+
+    private void computeResult() {
+        if (!input.isEmpty()) {
+            secondVal = Integer.parseInt(input);
+            switch (currentOperation) {
+                case '+': firstVal += secondVal; break;
+                case '-': firstVal -= secondVal; break;
+                case '*': firstVal *= secondVal; break;
+                case '/': firstVal = (secondVal != 0) ? firstVal / secondVal : 0;
+            }
+            input = "";
+        }
     }
 
 }
