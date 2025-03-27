@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     private int firstVal;
     private int secondVal;
     private char currentOperation;
+    private boolean isResultDisplayed = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,9 +27,33 @@ public class MainActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.calculator_main);
         resulText = findViewById(R.id.result);
+        if (savedInstanceState != null) {
+            input = savedInstanceState.getString("input", "");
+            firstVal = savedInstanceState.getInt("firstVal", 0);
+            secondVal = savedInstanceState.getInt("secondVal", 0);
+            currentOperation = savedInstanceState.getChar("currentOperation", '\0');
+            boolean isResultDisplayed = savedInstanceState.getBoolean("isResultDisplayed", false);
+            if (isResultDisplayed) {
+                resulText.setText(String.valueOf(firstVal));
+                input = String.valueOf(firstVal);
+            } else {
+                resulText.setText(input.isEmpty() ? "0" : input);
+            }
+        }
         setNumberBtnListeners();
         setOperatorBtnListeners();
     }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("input", input);
+        outState.putInt("firstVal", firstVal);
+        outState.putInt("secondVal", secondVal);
+        outState.putChar("currentOperation", currentOperation);
+        outState.putBoolean("isResultDisplayed", !input.isEmpty() ? false : true);
+    }
+
 
     private void setNumberBtnListeners()
     {
@@ -41,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
         View.OnClickListener numberClickListeners = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if (resulText.getText().toString().equals(String.valueOf(firstVal))) {
+                    input = "";
+                }
                 Button button = (Button)v;
                 input+= button.getText().toString();
                 resulText.setText(input);
@@ -86,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
         findViewById(R.id.btnEqual).setOnClickListener(view -> {
             computeResult();
             resulText.setText(String.valueOf(firstVal));
+            input = String.valueOf(firstVal);
         });
 
         findViewById(R.id.btnClear).setOnClickListener(view -> {
