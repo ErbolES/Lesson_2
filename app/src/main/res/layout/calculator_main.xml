@@ -11,13 +11,12 @@
         android:id="@+id/result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/result_text_size"
+        style="@style/common.resultTextView"
         tools:text="123456789"
-        android:background="@color/items_background_color"
         android:layout_marginTop="@dimen/top_margin"
-
         android:gravity="end"
-        android:textColor="@color/result_text_color"
+
+
 
         >
     </TextView>
@@ -33,9 +32,7 @@
         <Button
             android:id="@+id/btnClear"
             android:text="@string/btn_clear"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -45,9 +42,7 @@
         <Button
             android:id="@+id/btnBack"
             android:text="@string/btn_back"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -58,9 +53,7 @@
         <Button
             android:id="@+id/btnSubtract"
             android:text="@string/btn_subtract"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -79,27 +72,21 @@
         <Button
             android:id="@+id/btn7"
             android:text="@string/btn7"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn8"
             android:text="@string/btn8"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn9"
             android:text="@string/btn9"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
 
         </Button>
@@ -107,9 +94,7 @@
         <Button
             android:id="@+id/btnMultiply"
             android:text="@string/btn_multiply"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
     </TableRow>
@@ -124,27 +109,21 @@
         <Button
             android:id="@+id/btn4"
             android:text="@string/btn4"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn5"
             android:text="@string/btn5"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn6"
             android:text="@string/btn6"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
 
         </Button>
@@ -152,9 +131,7 @@
         <Button
             android:id="@+id/btnDivide"
             android:text="@string/btn_divide"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
     </TableRow>
@@ -169,27 +146,21 @@
         <Button
             android:id="@+id/btn1"
             android:text="@string/btn1"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn2"
             android:text="@string/btn2"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
 
         <Button
             android:id="@+id/btn3"
             android:text="@string/btn3"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
 
         </Button>
@@ -197,9 +168,7 @@
         <Button
             android:id="@+id/btnAdd"
             android:text="@string/btn_add"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             >
         </Button>
     </TableRow>
@@ -215,9 +184,7 @@
         <Button
             android:id="@+id/btn0"
             android:text="@string/btn0"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -227,9 +194,7 @@
         <Button
             android:id="@+id/btnDot"
             android:text="@string/btn_dot"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -239,9 +204,7 @@
         <Button
             android:id="@+id/btnEqual"
             android:text="@string/btn_equal"
-            android:textColor="@color/result_text_color"
-            android:backgroundTint="@color/items_background_color"
-            android:textSize="@dimen/btns_text_size"
+            style="@style/common.Btns"
             android:layout_weight="2"
             android:layout_width="0dp"
             android:layout_height="wrap_content"

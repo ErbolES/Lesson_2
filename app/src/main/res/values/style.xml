@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="common">
+        <item name="android:textColor">@color/result_text_color</item>
+    </style>
+    <style name="common.Btns">
+        <item name="android:backgroundTint">@color/items_background_color</item>
+        <item name="android:textSize">@dimen/btns_text_size</item>
+    </style>
+    <style name="common.resultTextView">
+        <item name="android:background">@color/items_background_color</item>
+        <item name="android:textSize">@dimen/result_text_size</item>
+    </style>
+
+</resources>
